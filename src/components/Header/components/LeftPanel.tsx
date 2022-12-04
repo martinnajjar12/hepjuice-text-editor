@@ -4,7 +4,7 @@ import Breadcrumbs from '../../Breadcrumbs';
 const LeftPanel = () => {
   return (
     <div className="d-flex align-items-center">
-      <BiChevronsRight className="mr-3" />
+      <BiChevronsRight className="mr-3 color-grey" />
       <Breadcrumbs />
     </div>
   );
