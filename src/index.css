@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -41,6 +45,10 @@ i {
   padding: 0.5em;
 }
 
+.p-3 {
+  padding: 1em;
+}
+
 .mt-4 {
   margin-top: 2em;
 }
@@ -63,6 +71,10 @@ i {
 
 .ml-3 {
   margin-left: 1em;
+}
+
+.mt-3 {
+  margin-top: 1em;
 }
 
 .unordered-list {

@@ -1,12 +1,12 @@
 .App {
   box-sizing: border-box;
   padding: 16px 20px;
-  /* text-align: center; */
 }
 
 .container {
   margin: 0 auto;
   max-width: 1200px;
+  height: 100vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
