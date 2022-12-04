@@ -8,3 +8,20 @@
   background-color: rgba(108, 114, 127, 0.3);
   cursor: text;
 }
+
+.editor:focus {
+  background-color: red;
+}
+
+@keyframes cursor-blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.active {
+  animation: cursor-blink infinite 1s none;
+}
