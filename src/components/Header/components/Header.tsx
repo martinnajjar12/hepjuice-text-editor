@@ -1,11 +1,12 @@
 import LeftPanel from './LeftPanel';
+import RightPanel from './RightPanel';
 
 const Header = () => {
   return (
-    <div className="d-flex justify-content-between align-items-center">
+    <header className="d-flex justify-content-between align-items-center">
       <LeftPanel />
-      <div>Hello World</div>
-    </div>
+      <RightPanel />
+    </header>
   );
 };
 
