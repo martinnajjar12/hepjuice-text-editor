@@ -1,0 +1,6 @@
+.spacer {
+  display: inline-block;
+  height: 15px;
+  width: 1px;
+  background-color: rgba(108, 114, 127, 0.5);
+}

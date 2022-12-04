@@ -1,0 +1,10 @@
+.statistics {
+  border: 1px solid rgba(108, 114, 127, 0.5);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.statistics p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}

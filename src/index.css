@@ -21,12 +21,12 @@ i {
   color: #6c727f;
 }
 
-.d-flex {
-  display: flex;
+.color-green {
+  color: #42946c;
 }
 
-.d-flexbox {
-  display: flexbox;
+.d-flex {
+  display: flex;
 }
 
 .justify-content-between {
@@ -37,8 +37,24 @@ i {
   align-items: center;
 }
 
+.p-2 {
+  padding: 0.5em;
+}
+
+.mt-4 {
+  margin-top: 2em;
+}
+
 .my-2 {
   margin: 0 0.5em;
+}
+
+.mr-1 {
+  margin-right: 0.25em;
+}
+
+.mr-2 {
+  margin-right: 0.5em;
 }
 
 .mr-3 {
@@ -58,4 +74,8 @@ i {
 
 .list-items {
   display: inline;
+}
+
+.d-inline-block {
+  display: inline-block;
 }
