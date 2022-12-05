@@ -15,6 +15,10 @@ const Editor = ({
 }) => {
   const [content, setContent] = useState('');
   const [show, setShow] = useState(false);
+  const [isH1Active, setIsH1Active] = useState(false);
+
+  const editorDiv = document.querySelector('#editor');
+  const cursorDiv = document.querySelector('#cursor-div');
 
   const handleClick = (e: MouseEvent<HTMLElement>) => {
     e.stopPropagation();
@@ -22,10 +26,30 @@ const Editor = ({
     setCursor('|');
   };
 
+  const chooseH1 = () => {
+    setShow(false);
+    setContent('');
+    setIsH1Active(true);
+    const heading = document.createElement('h1');
+    heading.classList.add('h1Active');
+    editorDiv?.insertBefore(heading, cursorDiv);
+  };
+
   useEffect(() => {
     const type = (e: KeyboardEvent) => {
       switch (e.code) {
         case 'Enter':
+          if (isH1Active) {
+            const heading = document.querySelector('.h1Active');
+            heading?.classList.remove('h1Active');
+            setContent('');
+            setIsH1Active(false);
+          } else {
+            const paraghraph = document.createElement('p');
+            paraghraph.innerHTML = content;
+            editorDiv?.insertBefore(paraghraph, cursorDiv);
+            setContent('');
+          }
           break;
         case 'Space':
           e.preventDefault();
@@ -69,7 +93,7 @@ const Editor = ({
     return () => {
       document.removeEventListener('keydown', type);
     };
-  }, [editable]);
+  }, [content, cursorDiv, editable, editorDiv, isH1Active]);
 
   useEffect(() => {
     if (content === '/') {
@@ -77,14 +101,19 @@ const Editor = ({
     } else {
       setShow(false);
     }
-  }, [content]);
+
+    if (isH1Active) {
+      const heading = document.querySelector('.h1Active');
+      if (heading) heading.innerHTML = content;
+    }
+  }, [content, isH1Active]);
 
   return (
     <div className={'editor mt-3 p-3'} onClick={handleClick} id="editor">
-      {content}
-      <div className="cursor-div">
-        <span className="active">{cursor}</span>
-        <Modal show={show} />
+      {isH1Active ? '' : content}
+      <div className="cursor-div" id="cursor-div">
+        <span className={isH1Active ? 'active itsH1' : 'active'}>{cursor}</span>
+        <Modal show={show} chooseH1={chooseH1} />
       </div>
     </div>
   );

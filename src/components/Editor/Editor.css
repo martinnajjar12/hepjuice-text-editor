@@ -9,13 +9,17 @@
   cursor: text;
 }
 
-.editor:focus {
-  background-color: red;
-}
-
 .cursor-div {
   display: inline-block;
   position: relative;
+}
+
+.h1Active {
+  display: inline-block;
+}
+
+.itsH1 {
+  font-size: 32px;
 }
 
 @keyframes cursor-blink {
