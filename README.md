@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://howmuchcalories.netlify.app)
+[Live Demo Link](https://helpjuiceeditor.netlify.app/)
 
 ## Getting Started
 
