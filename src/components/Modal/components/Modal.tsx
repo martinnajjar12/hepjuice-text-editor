@@ -3,7 +3,10 @@ import '../Modal.css';
 
 const Modal = ({ show, chooseH1 }: { show: boolean; chooseH1: () => void }) => {
   return (
-    <div className={show ? 'visible modal px-2' : 'hidden modal px-2'}>
+    <div
+      className={show ? 'visible modal px-2' : 'hidden modal px-2'}
+      data-testid="modal"
+    >
       <p className="title m-2">Add blocks</p>
       <p className="description color-grey opacity-7 m-2">
         Keep trying to filter, or escape to exit

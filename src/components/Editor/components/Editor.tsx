@@ -32,6 +32,7 @@ const Editor = ({
     setIsH1Active(true);
     const heading = document.createElement('h1');
     heading.classList.add('h1Active');
+    heading.setAttribute('data-testid', 'heading1');
     editorDiv?.insertBefore(heading, cursorDiv);
   };
 
@@ -109,7 +110,12 @@ const Editor = ({
   }, [content, isH1Active]);
 
   return (
-    <div className={'editor mt-3 p-3'} onClick={handleClick} id="editor">
+    <div
+      className={'editor mt-3 p-3'}
+      onClick={handleClick}
+      id="editor"
+      data-testid="editor"
+    >
       {isH1Active ? '' : content}
       <div className="cursor-div" id="cursor-div">
         <span className={isH1Active ? 'active itsH1' : 'active'}>{cursor}</span>
