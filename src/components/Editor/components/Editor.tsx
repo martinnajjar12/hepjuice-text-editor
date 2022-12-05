@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Dispatch, MouseEvent } from 'react';
+import Modal from '../../Modal';
 import '../Editor.css';
 
 const Editor = ({
@@ -13,6 +14,7 @@ const Editor = ({
   setCursor: Dispatch<React.SetStateAction<string>>;
 }) => {
   const [content, setContent] = useState('');
+  const [show, setShow] = useState(false);
 
   const handleClick = (e: MouseEvent<HTMLElement>) => {
     e.stopPropagation();
@@ -49,6 +51,11 @@ const Editor = ({
           break;
         case 'AltRight':
           break;
+        case 'Tab':
+          break;
+        case 'Escape':
+          setShow(false);
+          break;
         default:
           setContent(current => current + e.key);
           break;
@@ -64,10 +71,21 @@ const Editor = ({
     };
   }, [editable]);
 
+  useEffect(() => {
+    if (content === '/') {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  }, [content]);
+
   return (
     <div className={'editor mt-3 p-3'} onClick={handleClick} id="editor">
       {content}
-      <span className="active">{cursor}</span>
+      <div className="cursor-div">
+        <span className="active">{cursor}</span>
+        <Modal show={show} />
+      </div>
     </div>
   );
 };
